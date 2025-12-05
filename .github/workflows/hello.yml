@@ -6,4 +6,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Greet User
-        run: eco "Hello JADEJA! Pipeline chal rahi hai."
+        run: echo "Hello JADEJA! Pipeline chal rahi hai."
