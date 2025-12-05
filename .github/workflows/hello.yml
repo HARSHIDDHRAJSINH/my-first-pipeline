@@ -1,0 +1,9 @@
+name: My First Pipeline
+on: push
+
+jobs:
+  hello-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Greet User
+        run: echo "Hello JADEJA! Pipeline chal rahi hai."
