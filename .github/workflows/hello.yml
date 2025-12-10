@@ -1,7 +1,6 @@
 name: Deploy My Website
 on: push
 
-# Permissions (GitHub ko batana padta hai ki hum site upload kar rahe hain)
 permissions:
   contents: read
   pages: write
@@ -14,17 +13,17 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Code Lao (Checkout)
-        uses: actions/checkout@v3
-        
+      - name: Checkout
+        uses: actions/checkout@v4        # Updated to v4
+
       - name: Setup Pages
-        uses: actions/configure-pages@v3
-        
-      - name: Website File Upload karo
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/configure-pages@v5 # Updated to v5
+
+      - name: Upload Artifact
+        uses: actions/upload-pages-artifact@v3 # Updated to v3
         with:
           path: '.'
-          
-      - name: Live Server par Deploy karo 🚀
+
+      - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4    # Updated to v4
